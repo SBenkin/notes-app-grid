@@ -1,10 +1,14 @@
 import "./App.css";
 import Notes from "./Notes";
+import Login from "./Login";
+import { useState } from "react";
 
 const App = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
   return (
     <>
-      <Notes />
+      {!isLoggedIn && <Login />}
+      {isLoggedIn && <Notes />}
     </>
   );
 };
